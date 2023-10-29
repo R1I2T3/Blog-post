@@ -1,15 +1,26 @@
 import Link from "next/link";
-
-export default function PostCard() {
+import { FC } from "react";
+import { Tag } from "@prisma/client";
+interface PostCardProps{
+    post:{
+        id:string,
+        title:string
+        content:string,
+        tag:Tag,
+    }
+}
+const PostCard:FC<PostCardProps>=({post})=> {
     return (
         <div className="card w-full border bg-base-100 shadow-xl">
             <div className="card-body">
-                <h2 className="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <Link href={'/blog/1'} className="btn btn-primary"> Read more ...</Link>
+                <h2 className="card-title">{post.title}</h2>
+                <p>{post.content}</p>
+                <div className="card-actions justify-end mt-10">
+                <span className="badge  badge-secondary w-[100px] text-center">{post.tag.name}</span>
+                    <Link href={`/blog/${post.id}`} className="btn btn-primary"> Read more ...</Link>
                 </div>
             </div>
         </div>
     )
 }
+export default PostCard
