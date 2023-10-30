@@ -13,6 +13,7 @@ export async function POST(req:Request){
         return NextResponse.json(post,{status:200})
     }
     catch(e){
+        console.log(e)
         return NextResponse.json({message:'Could not create post'},{status:500})
     }
 }

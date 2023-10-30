@@ -11,17 +11,11 @@ interface FormPostProps {
     isEditing: boolean,
     initialValue?:FormInputPost
 }
-const retrievePosts = async () => {
-    const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
-    );
-    return response.data;
-};
-
-const FormPost: FC<FormPostProps> = ({ submit, isEditing ,initialValue }) => {
+const  FormPost: FC<FormPostProps> = ({ submit, isEditing ,initialValue }) => {
     const { register, handleSubmit } = useForm<FormInputPost>({
         defaultValues:initialValue
     });
+    
     const { data: dataTags, isLoading: isLoadingTag } = useQuery<Tag[]>({
         queryKey: ['tags'],
         queryFn: async () => {

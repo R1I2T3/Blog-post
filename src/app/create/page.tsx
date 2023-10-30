@@ -14,7 +14,7 @@ export default function CreatePage() {
     }
     const { mutate: createPost } = useMutation({
         mutationFn: (newPost: FormInputPost) => {
-            return axios.post('/api/posts/create', newPost)
+            return axios.post("/api/posts/create", newPost);
         },
         onError: (error) => {
             console.log(error);
@@ -24,6 +24,7 @@ export default function CreatePage() {
             router.refresh();
         }
     })
+
     return (
         <div>
             <BackButton />

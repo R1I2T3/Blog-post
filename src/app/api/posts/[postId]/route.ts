@@ -40,8 +40,8 @@ export async function PATCH(req:Request,context:contextProp){
     }
 }
 export async function GET(req:Request,context:contextProp) {
-    const {params}=context;
     try {
+        const {params}=context;
         const post=await db.post.findFirst({
             where:{
                 id:params.postId
