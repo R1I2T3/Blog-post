@@ -29,7 +29,7 @@ const Blog:FC<BlogProps>=async ({params})=>{
         <BackButton/>
         <div className="mb-8">
             <h2 className="text-2xl font-bold my-4">{post?.title}</h2>
-            <ButtonAction id={post?.id}/>       
+            <ButtonAction id={post?.id||"can"}/>       
         </div>
         <span className="badge  badge-secondary w-[100px] text-center">{post?.tag.name}</span>
         <p className="">{post?.content}</p>

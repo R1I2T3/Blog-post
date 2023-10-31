@@ -11,6 +11,7 @@
   "dependencies": {
     "@prisma/client": "^5.5.2",
     "@tanstack/react-query": "^5.0.5",
+    "@vercel/postgres": "^0.5.1",
     "axios": "^1.6.0",
     "lucide-react": "^0.290.0",
     "next": "14.0.0",
